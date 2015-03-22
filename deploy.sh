@@ -1,9 +1,17 @@
 #!/bin/bash
 
-rm -rf ../bundle-prev
-mv ../bundle ../bundle-prev
+# build into ../bundle
 meteor build ../ --server=https://lantern.sdunster.com --directory
 
-( cd ../bundle/programs/server && npm install )
-cp start.sh ../bundle/
+# nuke old version
+rm -rf ../bundle-prev
+
+# move live deploy out of the way
+mv ../bundle-current ../bundle-prev # 
+
+# move freshly built into place
+mv ../bundle ../bundle-current
+
+# install needed npm stuff
+( cd ../bundle-current/programs/server && npm install )
 
