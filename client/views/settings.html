@@ -1,0 +1,77 @@
+
+<template name="settings">
+  <ul class="table settings">
+    <li><a href="{{pathFor route='settings.locations'}}">Manage Locations<span class="accessory">&rsaquo;</span></a></li>
+    <li><a href="{{pathFor route='settings.notifications'}}">Manage Job Notifications<span class="accessory">&rsaquo;</span></a></li>
+    <li class="seperator"></li>
+    <li><a href="#" class="logout">Logout<span class="accessory">&rsaquo;</span></a></li>
+    <li><a href="#" class="logout_delete">Logout & Delete All Data<span class="accessory">&rsaquo;</span></a></li>
+    <li class="seperator"></li>
+    <li><a href="{{pathFor route='settings.tos'}}">Important Information<span class="accessory">&rsaquo;</span></a></li>
+    <li class="seperator"></li>
+    <li><a href="{{pathFor route='settings.status'}}">Service Status<span class="accessory">&rsaquo;</span></a></li>
+    {{#if super}}
+      <li><a href="{{pathFor route='settings.super'}}">Super Menu<span class="accessory">&rsaquo;</span></a></li>
+    {{/if}}
+  </ul>
+</template>
+
+<template name="settings_status">
+  <ul class="table settings">
+    <li class="cell">URL<span>{{url}}</span></li>
+    <li class="cell">DDP status<span>{{ddp}} {{reason}}</span></li>
+    <li class="cell">Device ID<span>{{deviceid}}</span></li>
+    <li class="seperator"></li>
+    {{#each syncers}}
+    <li class="cell">{{name}} sync status<span>{{syncStatus}}</span></li>
+    <li class="cell">{{name}} sync time <span>{{syncTime}} ms</span></li>
+    <li class="cell">{{name}} sync date<span>{{syncDate}}</span></li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="settings_tos">
+  {{> tos_text}}
+</template>
+
+<template name="settings_locations">
+  <p class="container">Choose the locations you'd like to view jobs and send messages to. Selections here don't affect what notifications you receive.</p>
+  <ul class="table settings">
+    {{#each locations}}
+      {{> settings_locations_location}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="settings_locations_location">
+  <li><a href="#">{{name}} ({{code}})<span class="accessory">{{#if enabled}}&#10003;{{else}}&#10005;{{/if}}</span></a></li>
+</template>
+
+<template name="settings_notifications">
+  <p class="container">Choose the locations for which you'd like to receive job notifications for.</p>
+  <ul class="table settings">
+    {{#each locations}}
+      {{> settings_notifications_location}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="settings_notifications_location">
+  <li><a href="#">{{name}} ({{code}})<span class="accessory">{{#if enabled}}&#10003;{{else}}&#10005;{{/if}}</span></a></li>
+</template>
+
+<template name="settings_super">
+Super!
+<div>
+  <span class="filepicker">
+    Attach photo
+    <div>
+      <input type="file" accept="image/*" capture="camera" />
+    </div>
+  </span>
+</div>
+<div>
+  <input type="file" accept="image/*" capture="camera" />
+</div>
+
+</template>

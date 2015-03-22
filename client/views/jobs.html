@@ -1,0 +1,110 @@
+<template name="jobs">
+  {{#if jobs}}
+    <ul class="table jobs">
+      {{#each jobs}}
+        <li class="{{class}}">
+          <a href="{{pathFor route='jobs.job'}}">
+            <span class="accessory">&rsaquo;</span>
+            <div><span class="id">{{location}}: {{identifier}}</span> <span class="type">{{type}}</span></div>
+            <div class="address">{{address}}</div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="container">No jobs :(</p>
+  {{/if}}
+</template>
+
+<template name="jobs_job">
+  <div class="job">
+    <div class="container header {{class}}">
+      <div class="status">
+        <div>{{status}}</div>
+        <div>{{type}} &mdash; {{region}}{{location}}</div>
+      </div>
+      <div class="title">#{{identifier}}</div>
+      <div class="summary">{{situation}}</div>
+    </div>
+    <div class="maps">
+      <img src="https://maps.googleapis.com/maps/api/streetview?size={{src_width}}x{{src_height}}&location={{address}}&fov=60" width="{{img_width}}" height="{{img_height}}" /><img src="https://maps.googleapis.com/maps/api/staticmap?markers=|{{address}}&zoom=16&size={{img_width}}x{{img_height}}&scale={{scale}}" width="{{img_width}}" height="{{img_height}}">
+    </div>
+    <ul class="table details">
+      <li class="address">
+        <a href="https://maps.google.com?q={{address}}" class="nav">
+          <i class="fa fa-map-marker fa-fw fa-pull-left fa-2x"></i>
+          <div class="details">
+            <div class="title">{{address}}</div>
+            <div class="subtitle">{{extraAddress}}</div>
+          </div>
+          <span class="accessory">&rsaquo;</span>
+        </a>
+      </li>
+      <li class="phone">
+        <a href="tel:{{contactNumber}}">
+          <i class="fa fa-phone fa-fw fa-pull-left fa-2x"></i>
+          <div class="details">
+            <div class="title">{{contact}}</div>
+            <div class="subtitle">{{contactNumber}}</div>
+          </div>
+          <span class="accessory">&rsaquo;</span>
+        </a>
+      </li>
+      <li class="access cell">
+        {{#if permissionToEnter}}
+          <i class="fa fa-check-circle fa-fw fa-pull-left fa-2x"></i>
+        {{else}}
+          <i class="fa fa-times-circle fa-fw fa-pull-left fa-2x"></i>
+        {{/if}}
+        <div class="details">
+          <div class="title">Permission to enter: {{#if permissionToEnter}}yes{{else}}no{{/if}}</div>
+          {{#if howToEnter}}
+            <div class="subtitle">{{howToEnter}}</div>
+          {{/if}}
+        </div>
+      </li>
+      {{#if acknowledged}}
+        <li class="cell">
+          <i class="fa fa-envelope fa-fw fa-pull-left fa-2x"></i>
+          <div class="details">
+            <div class="title">Acknowledged: yes</div>
+            {{#if acknowledgedBy}}
+              <div class="subtitle">By: {{acknowledgedBy}}</div>
+            {{/if}}
+          </div>
+        </li>
+      {{else}}
+        <li>
+          <a class="ack" href="#">
+            <i class="fa fa-envelope-o fa-fw fa-pull-left fa-2x"></i>
+            <div class="details">
+              <div class="title">Acknowledged: no</div>
+              <div class="subtitle">Tap to acknowledge</div>
+            </div>
+            <span class="accessory">&rsaquo;</span>
+          </a>
+        </li>
+      {{/if}}
+      <li class="beacon">
+        <a class="beacon" href="{{beacon_url}}" target="_blank">
+          <i class="fa fa-external-link fa-fw fa-pull-left fa-2x"></i>
+          <div class="details">
+            <div class="title">View in beacon</div>
+          </div>
+          <span class="accessory">&rsaquo;</span>
+        </a>
+      </li>
+    </ul>
+    <br />
+    <div class="container">
+      <div class="container clearfix">
+        {{#each tags}}
+          <span class="label tag tag-disabled {{tag_class}}">
+            <span class="tag-text">{{name}}</span>
+          </span>
+        {{/each}}
+      </div>
+      <br />
+    </div>
+  </div>
+</template>

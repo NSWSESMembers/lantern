@@ -1,0 +1,26 @@
+<head>
+  <title>lantern</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<template name="layout">
+  <header>
+    <div class="title"><span class="status {{status}}">&bull;</span> lantern</div>
+  </header>
+
+  <article class="main">
+    <div>
+      {{> yield}}
+    </div>
+  </article>
+
+  {{#unless hideFooter}}
+  <footer>
+    <ul>
+      <li><a href="{{pathFor route='jobs'}}" class="{{isActiveRoute regex='jobs'}}">Jobs</a></li>
+      <li><a href="{{pathFor route='messages'}}" class="{{isActiveRoute regex='messages'}}">Messages</a></li>
+      <li><a href="{{pathFor route='settings'}}" class="{{isActiveRoute regex='settings'}}">Setup</a></li>
+    </ul>
+  </footer>
+  {{/unless}}
+</template>

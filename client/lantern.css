@@ -1,0 +1,213 @@
+/* Global Lantern styles */
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+button {
+  font-size: 18px;
+  border: 0;
+  color: blue;
+  background-color: transparent;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+}
+
+h1 {
+  margin: 0px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+p.name {
+  padding: 2px 20px;
+}
+
+ul.locations {
+  padding-left: 0px;
+}
+
+ul.locations li {
+  list-style-type: none;
+  padding: 6px 20px;
+}
+
+ul.locations li:nth-child(odd) {
+  background-color: #EEEEEE;
+}
+
+article.main {
+  margin: 0;
+  padding-top: 33px;
+  padding-bottom: 38px;
+}
+
+article.main > div {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f7f7f7;
+  vertical-align: middle;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 33px;
+  padding: 6px 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #999999;
+}
+
+header .title {
+  font-weight: bold;
+}
+
+header .right {
+  float: right;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  background-color: #f7f7f7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  border-top: 1px solid #999999;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: block;
+  list-style-type: none;
+}
+
+footer ul li a {
+  display: block;
+  float: left;
+  height: 38px;
+  width: 33%;
+  font-size: 18px;
+  text-decoration: none;
+  color: #555555;
+}
+
+footer ul li a.active {
+  font-weight: bold;
+}
+
+article.login {
+  text-align: center;
+}
+
+article.login input {
+  border: 0;
+  border-bottom: 1px solid #999999;
+  border-radius: 0;
+  font-size: 24px;
+  width: 200px;
+  color: #999999;
+  padding: 5px 0px;
+}
+
+article.login button {
+  margin-top: 20px;
+}
+
+article.tos {
+  margin: 10px;
+}
+
+article.tos ul {
+  padding-left: 20px;
+}
+
+ul.table {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #999999;
+  margin-top: 25px;
+}
+
+ul.table li a, ul.table li.cell {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #999999;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+
+ul.table li a .accessory {
+  margin-top: -9px;
+  font-size: 24px;
+  float: right;
+  color: #999999;
+}
+
+ul.table.settings li.cell span {
+  float: right;
+  color: #999999;
+}
+
+ul.table li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul.table li.seperator {
+  border-bottom: 1px solid #999999;
+  margin-top: 25px;
+  height: 0;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+header .status.connected {
+  color: green;
+}
+header .status.connecting {
+  color: orange;
+}
+header .status.failed {
+  color: grey;
+}
+header .status.waiting {
+  color: red;
+}
+header .status.offline {
+  color: red;
+}

@@ -1,0 +1,8 @@
+// user report
+db.users.find({"services.beacon.id": {$exists: 1}}).map(function(user) { return user.services && user.services.beacon && db.people.find({sesId: user.services.beacon.id.toString()}).map(function(person) { return [ person.location, person.name] }); });
+
+
+db.users.find({"services.beacon.id": {$exists: 1}}).map(function(user) { return user.services && user.services.beacon && db.people.find({sesId: user.services.beacon.id.toString()}).map(function(person) { return [ person.location, person.name] }); }).forEach(function(result) { print(result) });
+
+db.users.find({"services.beacon.id": {$exists: 1}}).map(function(user) { return user.services && user.services.beacon && db.people.find({sesId: user.services.beacon.id.toString()}).map(function(person) { return [ person.sesId, person.location, person.name] }); }).forEach(function(result) { print(result) });
+

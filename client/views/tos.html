@@ -1,0 +1,18 @@
+<template name="tos">
+  <article class="tos">
+    {{> tos_text}}
+    <p>In order to continue you <b>must</b> have read and understood the above.</p>
+    <p class="align-center"><button class="decline">Nope</button> <button class="accept">Understood</button></p>
+  </article>
+</template>
+
+<template name="tos_text">
+  <h1><u>Really</u> Important Info</h1>
+  <ul>
+    <li>Not a replacement for SMS/Pagers. <b>Please</b> don't rely on this system for rescue notifications and the like.</li>
+    <li>Not operated or even endorsed by NSW SES.</li>
+    <li>All the regular NSW SES rules and policies apply to use of this tool. By accessing this you are effectively accessing <i>beacon</i> so you should treat this the same.</li>
+    <li>No warranty or uptime guarantee is provided &mdash; this service may become unavailable at any time.</li>
+    <li>Your <i>beacon</i> password has to be encypted and stored on the server(s) in order for this service to work. If you tap "Nope" below then your password will be permanently erased and you will be logged out.</li>
+  </ul>
+</template>

@@ -1,0 +1,12 @@
+<template name="setupassistant">
+  <p class="container">Choose a location and we'll get you set up for job notifications. You can configure additional locations or notifications for additional devices in 'Setup' later.</p>
+  <ul class="table settings">
+    {{#each locations}}
+      {{> setupassistant_location}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="setupassistant_location">
+  <li><a href="#">{{name}} ({{code}})<span class="accessory">&rsaquo;</span></a></li>
+</template>

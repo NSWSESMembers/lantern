@@ -1,0 +1,77 @@
+/* CSS styles for Job-related views */
+
+ul.table.jobs .id {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+ul.table.jobs .priority a {
+  background-color: #FCF9E2;
+}
+ul.table.jobs .rescue a {
+  background-color: #F6DDDD;
+}
+ul.table.jobs .type {
+  color: #666666;
+  float: right;
+  padding-right: 10px;
+}
+
+div.job img {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.job .header {
+  padding: 10px 10px;
+}
+
+.job .status {
+  float: right;
+  text-align: right;
+  color: gray;
+}
+
+.job .header.priority {
+  background-color: #FCF9E2;
+}
+.job .header.rescue {
+  background-color: #F6DDDD;
+}
+
+.job .header .title {
+  font-size: 1.9em;
+}
+
+.job .header .subtitle {
+}
+
+.job .header .summary {
+  clear: both;
+  font-variant: italic;
+}
+
+.job .maps {
+  border-top: 1px solid #999999;
+}
+
+.job ul.details {
+  position: relative;
+  margin-top: -26px;
+}
+
+.job ul.details .title {
+  font-weight: bold;
+}
+
+.job ul.details .subtitle {
+}
+
+.job ul.details .fa {
+  vertical-align: middle;
+}
+
+.job ul.details .details {
+  display: inline-block;
+  vertical-align: middle;
+}

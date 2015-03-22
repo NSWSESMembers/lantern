@@ -1,0 +1,3 @@
+com.phonegap.plugins.PushPlugin@https://codeload.github.com/sdunster/PushPlugin/legacy.tar.gz/82709fc14eeefdd0c9242ab42bee4a29f78be9b4
+org.apache.cordova.statusbar@0.1.8
+org.apache.cordova.inappbrowser@0.5.4

@@ -1,0 +1,17 @@
+<template name="reauth">
+  <article class="login">
+    <p>It looks like your beacon password has changed or your account has been disabled.
+      You must re-authenticate with your password, or log out.</p>
+    <form>
+      <div><input type="password" class="password" placeholder="password" /></div>
+      {{#if loading}}
+        <p>{{> spin size='sm'}}</p>
+      {{else}}
+        <div>
+          <button type="reset" class="logout">Logout</button>
+          <button type="submit" class="login">Reauth</button>
+        </div>
+      {{/if}}
+    </form>
+  </article>
+</template>

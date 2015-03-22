@@ -1,0 +1,19 @@
+form.messages {
+  padding: 0;
+  margin: 0;
+}
+
+form.messages textarea {
+  margin: 0;
+  padding: 10px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+form.messages .right {
+  float: right;
+}
+
+form.messages .counter.fail {
+  color: red;
+}

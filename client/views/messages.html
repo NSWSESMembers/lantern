@@ -1,0 +1,37 @@
+<template name="messages">
+  {{#if contacts}}
+    <p class="container">Choose a contact group to send a message to.</p>
+    <ul class="table">
+      {{#each contacts}}
+        <li><a href="{{pathFor route='messages.form'}}">{{name}}<span class="accessory">&rsaquo;</span></a></li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="container">No contact groups! You must enable a location in Settings &gt; Manage Locations.</p>
+  {{/if}}
+</template>
+
+<template name="messages_form">
+  <form class="messages">
+    <p class="container">Sending to: {{name}}</p>
+    <textarea rows="5" name="text" placeholder="Enter message text" style="width:100%"></textarea>
+    <div class="container">
+      {{#if loading}}
+        <span class="right">{{> spin size='sm'}}</span>
+      {{else}}
+        {{#if ok}}
+          <button class="right" type="submit">Send</button>
+        {{/if}}
+      {{/if}}
+      {{#if tooLong}}
+        <span class="counter fail">{{count}}</span>
+      {{else}}
+        <span class="counter">{{count}}</span>
+      {{/if}}
+    </div>
+  </form>
+</template>
+
+<template name="messages_done">
+  <p class="container">Message sent successfully.</p>
+</template>
