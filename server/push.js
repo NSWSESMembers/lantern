@@ -6,7 +6,9 @@ var setupApn = function() {
   apnOptions = _.extend({
     cert: process.env.APNS_CERT,
     key: process.env.APNS_KEY,
-    production: true
+    production: true,
+    // Azure seems to time out connections after 4 mins :(
+    connectionTimeout: 200000, 
   }, apnOptions)
 
   return new Apn.Connection(apnOptions);
