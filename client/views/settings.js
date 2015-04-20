@@ -4,7 +4,7 @@ Meteor.subscribe('locations');
 
 // these are the syncers to show in the status screen
 var syncers = [
-  { id: 'job1', name: 'Job (1 sec)' },
+  { id: 'job1', name: 'Job (10 sec)' },
   { id: 'job2', name: 'Job (1 min)' },
   { id: 'job3', name: 'Job (10 min)' },
   { id: 'job4', name: 'Job (hourly)' },

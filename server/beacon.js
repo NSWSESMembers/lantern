@@ -646,7 +646,7 @@ var startSyncers = function(beacon) {
   
   new Syncer({
     id: 'job1',
-    interval: 1000, // 1s
+    interval: 10000, // 10s
     sync: function(cb) {
       syncJobs(beacon, 20, 1000 * 60 * 5, function(error) {
         cb(error);
